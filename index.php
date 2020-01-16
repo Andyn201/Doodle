@@ -12,18 +12,22 @@
 </head>
 <body>
 
-<div class="mainSection">
+<div class="wrapper indexPage">
 
-    <div class="logoContainer">
-        <img src="./assets/img/doodleLogo.png" alt="" >
+    <div class="mainSection">
+
+        <div class="logoContainer">
+            <img src="./assets/img/doodleLogo.png" alt="" >
+        </div>
+
+        <div class="searchContainer">
+            <form action="search.php" method="GET">
+                <input type="text" class="searchBox" name="term">
+                <input type="submit" value="Search" class="searchButton">
+            </form>
+        </div>
     </div>
 
-    <div class="searchContainer">
-        <form action="search.php" method="GET">
-            <input type="text" class="searchBox" name="term">
-            <input type="submit">
-        </form>
-    </div>
 </div>
     
 </body>
