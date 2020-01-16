@@ -17,7 +17,7 @@
     <div class="mainSection">
 
         <div class="logoContainer">
-            <img src="./assets/img/doodleLogo.png" alt="" >
+            <img src="./assets/img/logo.png" alt="" >
         </div>
 
         <div class="searchContainer">
