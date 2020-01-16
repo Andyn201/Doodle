@@ -32,8 +32,8 @@
                 <form action="search.php" method="GET">
                     <div class="searchBarContainer">
                         <input type="text" class="searchBox" name="term">
-                        <button>
-                            Search
+                        <button class="searchButton">
+                            <img src="./assets/img/icons/search.png" alt="logo">
                         </button>
                     </div>
                 </form>
