@@ -43,7 +43,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 
 						<div class="searchBarContainer">
 
-							<input class="searchBox" type="text" name="term">
+							<input class="searchBox" type="text" value="<?php echo $term; ?>" name="term">
 							<button class="searchButton">
 								<img src="./assets/img/icons/search.png">
 							</button>
