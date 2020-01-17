@@ -31,6 +31,42 @@ function createLink($src, $url) {
 }
 
 
+function getDetails($url) {
+    $parser = new DomDocumentParser($url);
+
+    $titleArray = $parser->getTitleTags();
+
+    $title = $titleArray->item(0)->nodeValue;
+    $title = str_replace("\n", "", $title);
+
+    if($title == "") {
+        return;
+    }
+
+    $description = "";
+    $keywords = "";
+
+
+    $metaArray = $parser->getMetaTags();
+
+    foreach($metaArray as $meta) {
+
+        if($meta->getAttribute("name") == "description") {
+            $description = $meta->getAttribute("content");
+        }
+
+        if($meta->getAttribute("name") == "keywords") {
+            $keywords = $meta->getAttribute("content");
+        }
+
+    }
+
+    $description = str_replace("\n", "", $description);
+    $keywords = str_replace("\n", "", $keywords);
+
+}
+
+
 function followLinks($url) {
 
     global $alreadyCrawled;
@@ -57,9 +93,11 @@ function followLinks($url) {
             $alreadyCrawled[] = $href;
             $crawling[] = $href;
 
+            getDetails($href);
         }
 
-        echo $href . "<br>";
+        else return;
+
     }
 
     array_shift($crawling);
