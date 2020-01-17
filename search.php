@@ -1,5 +1,7 @@
 <?php
 
+include('config.php');
+
     if(isset($_GET["term"])){
         $term = $_GET['term'];
     }
@@ -22,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Noodle</title>
 </head>
 <body>
 
