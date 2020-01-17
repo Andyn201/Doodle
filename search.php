@@ -19,7 +19,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 <head>
 	<title>Welcome to Doodle</title>
 
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 </head>
 <body>
@@ -45,7 +45,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 
 							<input class="searchBox" type="text" name="term">
 							<button class="searchButton">
-								<img src="assets/images/icons/search.png">
+								<img src="./assets/img/icons/search.png">
 							</button>
 						</div>
 
@@ -67,7 +67,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 					</li>
 
 					<li class="<?php echo $type == 'images' ? 'active' : '' ?>">
-						<a href='<?php echo "search.php?term=$term&type=images"; ?>'>
+						<a href='<?php echo "search.php?erm=$term&type=images"; ?>'>
 							Images
 						</a>
 					</li>
@@ -92,12 +92,13 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 			<?php
 			$resultsProvider = new SiteResultsProvider($con);
 
-			echo $resultsProvider->getNumResults($term);
+            $numResults = $resultsProvider->getNumResults($term);
+            
+			echo "<p class='resultsCount'>$numResults results found</p>";
 			?>
 
 
 		</div>
-
 
 
 	</div>
