@@ -10,6 +10,8 @@ function followLinks($url) {
 }
 
 
-$startUrl = "http://www.reecekenney.com";
+$startUrl = "https://reecekenney.com/";
 
 followLinks($startUrl);
+
+?>
