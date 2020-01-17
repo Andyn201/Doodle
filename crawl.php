@@ -4,8 +4,18 @@ include("./classes/DomDocumentParser.php");
 
 
 function createLink($src, $url) {
-    echo "SRC: $src <br>"; 
-    echo "URL: $url <br>"; 
+
+    $scheme = parse_url($url)["scheme"];
+    $host = parse_url($url)["host"];
+
+    if(substr($src, 0, 2) == "//"){
+        $src = $scheme . ":" . $src;
+    }
+    else if(substr($src, 0, 1) == "/"){
+        $src = $scheme . "://" . $host .  $src;
+    }
+
+    return $src;
 }
 
 
@@ -26,7 +36,7 @@ function followLinks($url) {
             continue;
         }
 
-        createLink($href, $url);
+        $href = createLink($href, $url);
 
         echo $href . "<br>";
     }
