@@ -67,7 +67,7 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 					</li>
 
 					<li class="<?php echo $type == 'images' ? 'active' : '' ?>">
-						<a href='<?php echo "search.php?erm=$term&type=images"; ?>'>
+						<a href='<?php echo "search.php?term=$term&type=images"; ?>'>
 							Images
 						</a>
 					</li>
